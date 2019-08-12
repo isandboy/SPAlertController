@@ -446,13 +446,13 @@
     func(_target, selector, self);
 }
 
-- (void)touchDown:(UIButton *)sender {
-    sender.backgroundColor = SP_SELECTED_COLOR;
-}
-
-- (void)touchDragExit:(UIButton *)sender {
-    sender.backgroundColor = SP_NORMAL_COLOR;
-}
+//- (void)touchDown:(UIButton *)sender {
+//    sender.backgroundColor = SP_SELECTED_COLOR;
+//}
+//
+//- (void)touchDragExit:(UIButton *)sender {
+//    sender.backgroundColor = SP_NORMAL_COLOR;
+//}
 
 // 安全区域发生了改变,在这个方法里自动适配iPhoneX
 - (void)safeAreaInsetsDidChange {
@@ -515,8 +515,8 @@ UIEdgeInsets UIEdgeInsetsAddEdgeInsets(UIEdgeInsets i1,UIEdgeInsets i2) {
         actionButton.titleLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
         actionButton.titleLabel.minimumScaleFactor = 0.5;
         [actionButton addTarget:self action:@selector(touchUpInside:) forControlEvents:UIControlEventTouchUpInside]; // 手指按下然后在按钮有效事件范围内抬起
-        [actionButton addTarget:self action:@selector(touchDown:) forControlEvents:UIControlEventTouchDown | UIControlEventTouchDragInside]; // 手指按下或者手指按下后往外拽再往内拽
-        [actionButton addTarget:self action:@selector(touchDragExit:) forControlEvents:UIControlEventTouchDragExit | UIControlEventTouchUpOutside | UIControlEventTouchCancel]; // 手指被迫停止、手指按下后往外拽或者取消，取消的可能性:比如点击的那一刻突然来电话
+//        [actionButton addTarget:self action:@selector(touchDown:) forControlEvents:UIControlEventTouchDown | UIControlEventTouchDragInside]; // 手指按下或者手指按下后往外拽再往内拽
+//        [actionButton addTarget:self action:@selector(touchDragExit:) forControlEvents:UIControlEventTouchDragExit | UIControlEventTouchUpOutside | UIControlEventTouchCancel]; // 手指被迫停止、手指按下后往外拽或者取消，取消的可能性:比如点击的那一刻突然来电话
         [self addSubview:actionButton];
         _actionButton = actionButton;
     }
